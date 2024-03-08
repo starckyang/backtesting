@@ -29,11 +29,12 @@ for single_date in [s_date + relativedelta(months=n) for n in range((f_date.year
             dfs.append(df)
         finally:
             print("{} Completed".format(single_date.month))
-
 df = pd.concat(dfs, ignore_index=True)
 df['日期'].apply(lambda _: datetime.datetime(int(_.split("/")[0]), int(_.split("/")[1]), int(_.split("/")[2])))
 df.set_index(df["日期"], inplace=True)
 df.drop("日期", axis=1, inplace=True)
+
+
 new_df = pd.DataFrame()
 new_df["close"] = pd.to_numeric(df["收盤價"])
 new_df["5ma"] = new_df["close"].rolling(5).mean()
