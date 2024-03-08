@@ -1,6 +1,11 @@
 # Purpose
 This is a repository for me to store my backtesting trials.
 
+# Tools
+## Grabber
+    This object is built to retrieve stock data from TWSE (Taiwan Stock Exchange), currently, it can only be used <br>
+    to get information inside the market of Taiwan
+
 # Current Trials
 ## MA Crossings:<br>
     There's an old technical analysis technique about MA lines. <br>
