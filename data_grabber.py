@@ -38,7 +38,7 @@ class Grabber:
                     print("{} Completed".format(single_date.month))
 
         df = pd.concat(dfs, ignore_index=True)
-        df['日期'].apply(lambda _: datetime.datetime(int(_.split("/")[0]), int(_.split("/")[1]), int(_.split("/")[2])))
+        df["日期"] = df['日期'].apply(lambda _: datetime.datetime(int(_.split("/")[0])+1911, int(_.split("/")[1]), int(_.split("/")[2])))
         df.set_index(df["日期"], inplace=True)
         df.drop("日期", axis=1, inplace=True)
         self.df = df
